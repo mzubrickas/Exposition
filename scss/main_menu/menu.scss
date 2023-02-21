@@ -1,0 +1,73 @@
+
+
+.background_picture {
+  width: 100%;
+  height: 1080px;
+  background: url("../images/background/paveikslas3.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+
+
+  .picture {
+    width: 100%;
+    // height: 1409px;
+    // background: url("../images/background/paveikslas.png") no-repeat;
+  }
+
+  .arrow_move {
+    width: 250px;
+    animation-name: moveRight;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+
+    .main_menu_button {
+      width: 264px;
+      height: 100px;
+      font-size: 26px;
+      border-radius: 20px;
+      margin-right: 50px;
+      margin-bottom: 75px;
+      padding: 10px;
+      background-color: $buttonBackground;
+      color: $buttonTextColor;
+      border: 2px solid $buttonBorderColor;
+      transition: ease-in-out 0.8s;
+
+    }
+
+    .main_arrow {
+      width: 80px;
+      height: 80px;
+      font-size: 26px;
+      border-radius: 50px;
+      margin-top: 90px;
+      margin-right: 50px;
+      padding: 10px;
+      background-color: $buttonBackground;
+      color: $buttonTextColor;
+      border: 2px solid #ff7f00;
+      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    }
+
+    .fa-arrow-right {
+      color: #ff7f00;
+      font-size: 35px;
+    }
+  }
+}
+
+
+@keyframes moveRight {
+  from {width: 250px;}
+  to {width: 180px;}
+}

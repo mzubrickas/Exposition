@@ -1,0 +1,209 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+p{
+  font-size: 20px;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+// ::selection{
+//   width: 100%;
+//   color: #fff;
+//   background: #6563ff;
+// }
+
+.return_from_game_with_time_two {
+  width: 170px;
+  height: 81px;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: $buttonBackground;
+  color: $buttonTextColor;
+  border: 3px solid $buttonBorderColor;
+
+}
+
+.heading_two {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  .container_5 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.game_background_time {
+  width: 100%;
+  height: 1080px;
+  background: url("../images/background/fonas2.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cards_two, .card_two, .view_two, .details, p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards_two{
+  height: 900px;
+  width: 900px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cards_two .card_two{
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  height: calc(100% / 6 - 20px);
+  width: calc(100% / 6 - 20px);
+}
+.card_two.shake_two{
+  animation: shake 0.35s ease-in-out;
+}
+@keyframes shake_two {
+  0%, 100%{
+    transform: translateX(0);
+  }
+  20%{
+    transform: translateX(-13px);
+  }
+  40%{
+    transform: translateX(13px);
+  }
+  60%{
+    transform: translateX(-8px);
+  }
+  80%{
+    transform: translateX(8px);
+  }
+}
+.cards_two .card_two .view_two{
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  // background: $cardColor;
+  border-radius: 7px;
+  backface-visibility: hidden;
+  transition: transform 0.25s linear;
+  // box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  // border: $cardBorder;
+}
+.card_two .front-view_two img{
+  // max-width: 17px;
+  width: 145px;
+}
+.card_two .back-view_two{
+  transform: rotateY(-180deg);
+}
+.card_two .back-view_two img{
+  max-width: 145px;
+}
+.card_two.flip .front-view_two{
+  transform: rotateY(180deg);
+}
+.card_two.flip .back-view_two{
+  transform: rotateY(0);
+}
+
+.details{
+  width: 50%;
+  // height: 81px;
+  font-size: 20px;
+  border-radius: 20px;
+  display: flex;
+  // width: 100%;
+  // margin: 15px;
+  padding: 0 20px;
+  border-radius: 7px;
+  background: $backgroundThemeThreeColor;
+  // height: calc(100% / 4 - 30px);
+  justify-content: space-around;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.details p{
+  font-size: 18px;
+  height: 17px;
+  padding-right: 18px;
+  // border-right: 1px solid #ccc;
+  color: $buttonBackground;
+}
+.details p span{
+  margin-left: 8px;
+}
+.details p b{
+  font-weight: 500;
+}
+.details button{
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 11px;
+  background: $buttonBackground;
+  border: 2px solid white;
+}
+
+@media screen and (max-width: 700px) {
+  .cards_two{
+    height: 350px;
+    width: 350px;
+  }
+  .card_two .front-view_two img{
+    max-width: 16px;
+  }
+  .card_two .back-view_two img{
+    max-width: 40px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .cards_two{
+    height: 300px;
+    width: 300px;
+  }
+  .cards_two .back-view_two img{
+    max-width: 35px;
+  }
+  .details{
+    margin-top: 10px;
+    padding: 0 15px;
+    height: calc(100% / 4 - 20px);
+  }
+  .details p{
+    height: 15px;
+    font-size: 17px;
+    padding-right: 13px;
+  }
+  .details button{
+    font-size: 13px;
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+    background: #6563ff;
+  }
+}
+
+.hidden  {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 0.5s linear;
+}
